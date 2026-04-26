@@ -55,7 +55,7 @@ Route::get('pert5', function () {
     return view ('Pertemuan5');
 });
 
-Route::get('pert5linktree', function () {
+Route::get('pert5Linktree', function () {
     return view ('Pertemuan5Linktree');
 });
 
