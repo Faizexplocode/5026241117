@@ -3,27 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PegawaiController extends Controller
 {
-    //
-    public function index($nama){
-
-    	return $nama;
-
+    public function index()
+    {
+        $pegawai = DB::table('pegawai')->get();
+        return view('index', ['pegawai' => $pegawai]);
     }
 
-     public function formulir(){
+    public function tambah()
+    {
+        return view('tambah');
+    }
 
-    	return view('formulir');
+    public function simpan(Request $request)
+    {
+        DB::table('pegawai')->insert([
+            'pegawai_nama'    => $request->input('pegawai_nama'),
+            'pegawai_jabatan' => $request->input('pegawaia_jabatan'),
+            'pegawai_umur'    => $request->input('pegawai_umur'),
+            'pegawai_alamat'  => $request->input('pegawai_alamat'),
+        ]);
 
-}
-
-public function proses(Request $request){
-        $nama = $request->input('nama');
-     	$alamat = $request->input('alamat');
-        $umur = $request->input('umur');
-        return "Nama : " . $nama . ",<br>Umur : " . $umur .
-        ", <br>Alamat : " . $alamat  ;
-}
+        return redirect('/pegawai');
+    }
 }
