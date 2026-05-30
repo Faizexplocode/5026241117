@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PegawaiDBController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -34,7 +35,11 @@ Route::get('pert5', function () { return view('Pertemuan5'); });
 Route::get('pert5Linktree', function () { return view('Pertemuan5Linktree'); });
 
 // CRUD Pegawai
-Route::get('/pegawai', [PegawaiController::class, 'index']);
-Route::get('/pegawai/tambah', [PegawaiController::class, 'tambah']);
-Route::post('/pegawai/simpan', [PegawaiController::class, 'simpan']);
+Route::get('/pegawai', [PegawaiDBController::class, 'index']);
+Route::get('/pegawaitambah', [PegawaiDBController::class, 'tambah']);
+Route::post('/pegawaistore', [PegawaiDBController::class, 'store']);
+Route::get('/pegawaiedit/{id}', [PegawaiDBController::class, 'edit']);
+Route::post('/pegawaiupdate', [PegawaiDBController::class, 'update']);
+Route::get('/pegawaihapus/{id}', [PegawaiDBController::class, 'hapus']);
+Route::get('/pegawaicari', [PegawaiDBController::class, 'cari']);
 
