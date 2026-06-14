@@ -127,15 +127,14 @@
                         <a class="nav-link" href="/sandal">Sandal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/">PR 2</a>
+                        <a class="nav-link" href="/perpustakaan">Perpustakaan-soal tahun lalu-</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">PR 3</a>
+                        <a class="nav-link" href="/nilaikuliah">Nilai Kuliah</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">EAS</a>
                     </li>
-
                 </ul>
             </div>
         </nav>

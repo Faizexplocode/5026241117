@@ -8,6 +8,8 @@ use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\SandalController;
+use App\Http\Controllers\BukuController;
+use App\Http\Controllers\NilaiKuliahController;
 
 
 Route::get('/', function () {
@@ -28,6 +30,7 @@ Route::get('/blog', [BlogController::class, 'home']);
 Route::get('/blog/tentang', [BlogController::class, 'tentang']);
 Route::get('/blog/kontak', [BlogController::class, 'kontak']);
 
+//tugas sebelumnya
 Route::get('pert1intro', function () { return view('Pertemuan1Intro'); });
 Route::get('pert2news', function () { return view('Pertemuan2news'); });
 Route::get('pert3responsive', function () { return view('Pertemuan3responsive'); });
@@ -63,3 +66,15 @@ Route::get('/keranjanghapus/{id}', [KeranjangController::class, 'hapus']);
 //sandal
 Route::get('/sandal', [SandalController::class, 'index']);
 Route::post('/sandal', [SandalController::class, 'store']);
+
+//perpustakaan
+Route::get('/perpustakaan', [BukuController::class, 'index']);
+Route::post('/perpustakaanpinjam/{id}', [BukuController::class,'pinjam']);
+
+//nilaikuliah
+Route::get('/nilaikuliah', [NilaiKuliahController::class, 'index'])->name('nilaikuliah.index');
+Route::get('/nilaikuliah/create', [NilaiKuliahController::class, 'create'])->name('nilaikuliah.create');
+Route::post('/nilaikuliah', [NilaiKuliahController::class, 'store'])->name('nilaikuliah.store');
+Route::get('/nilaikuliah/{id}/edit', [NilaiKuliahController::class, 'edit'])->name('nilaikuliah.edit');
+Route::put('/nilaikuliah/{id}', [NilaiKuliahController::class, 'update'])->name('nilaikuliah.update');
+Route::delete('/nilaikuliah/{id}', [NilaiKuliahController::class, 'destroy'])->name('nilaikuliah.destroy');

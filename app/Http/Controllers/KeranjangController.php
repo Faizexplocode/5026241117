@@ -16,14 +16,7 @@ class KeranjangController extends Controller
     	// mengirim data keranjang_belanja ke view index
     	return view('keranjang/index',['belanja' => $belanja]); //
     }
-    // method untuk edit data pegawai
-	public function beli($id)
-	{
-		// mengambil data pegawai berdasarkan id yang dipilih
-		$belanja = DB::table('Keranjang_Belanja')->where('KodeBarang',$id)->get();
-		// passing data pegawai yang didapat ke view edit.blade.php
-		 return view('keranjang.beli', ['barang' => $belanja]);
-	}
+
     public function hapus($id)
 	{
 		// menghapus data keranjang_belanja berdasarkan id yang dipilih
