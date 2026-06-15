@@ -133,7 +133,7 @@
                         <a class="nav-link" href="/nilaikuliah">Nilai Kuliah</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">EAS</a>
+                        <a class="nav-link" href="/nilaipeserta">EAS</a>
                     </li>
                 </ul>
             </div>

@@ -10,6 +10,7 @@ use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\SandalController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\NilaiKuliahController;
+use App\Http\Controllers\NilaiPesertaController;
 
 
 Route::get('/', function () {
@@ -78,3 +79,8 @@ Route::post('/nilaikuliah', [NilaiKuliahController::class, 'store'])->name('nila
 Route::get('/nilaikuliah/{id}/edit', [NilaiKuliahController::class, 'edit'])->name('nilaikuliah.edit');
 Route::put('/nilaikuliah/{id}', [NilaiKuliahController::class, 'update'])->name('nilaikuliah.update');
 Route::delete('/nilaikuliah/{id}', [NilaiKuliahController::class, 'destroy'])->name('nilaikuliah.destroy');
+
+//nilai peserta
+Route::get('/nilaipeserta', [NilaiPesertaController::class, 'index']);
+Route::get('/nilaipesertatambah', [NilaiPesertaController::class, 'tambah']);
+Route::post('/nilaipesertastore', [NilaiPesertaController::class, 'store']);

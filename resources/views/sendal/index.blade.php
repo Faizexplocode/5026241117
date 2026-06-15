@@ -4,10 +4,10 @@
 @section('title', 'Data Sandal')
 <!-- isi bagian konten-->
 @section('konten')
-<h2>Daftar Sandal</h2>
 
     <center>
         <br />
+        <h2>Daftar Sandal</h2>
         <br />
 
         <br />
